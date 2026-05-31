@@ -20,7 +20,7 @@ public class Menu {
         Scanner scanner = new Scanner (System.in);
         MainMenuOptions option = MainMenuOptions.EXIT;
         int choice;
-        BuisnessLayer bi = new BuisnessLayer();
+        BuisnessLayer bi = new BuisnessLayer(scanner);
         
         do
         {

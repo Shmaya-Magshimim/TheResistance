@@ -6,6 +6,13 @@ import java.util.Scanner;
 public class BuisnessLayer {
     private ArrayList<Animal> animals = new ArrayList<>();
     private Queue<Animal> vetList = new LinkedList<>();
+    private final Scanner scanner;
+
+
+    public BuisnessLayer(Scanner scanner)
+    {
+        this.scanner = scanner;
+    }
 
     public void addAnimal()
     {
@@ -13,17 +20,17 @@ public class BuisnessLayer {
         System.out.println("Select 1 to add Mammal");
         System.out.println("Select 2 to add Reptile");
 
-        Scanner scanner = new Scanner(System.in);
-        int animalType = scanner.nextInt();
+        int animalType = this.scanner.nextInt();
+        scanner.nextLine();
 
         System.out.println("Input animals name: ");
-        String name = scanner.next();
+        String name = this.scanner.nextLine();
 
         System.out.println("Input animals species:  ");
-        String species = scanner.next();
+        String species = this.scanner.nextLine();
 
         System.out.println("Input animals traits: ");
-        String traits = scanner.nextLine();
+        String traits = this.scanner.nextLine();
 
         if (animalType == 1)
         {
@@ -32,7 +39,7 @@ public class BuisnessLayer {
         }
         else if (animalType == 2)
         {
-            Animal newAnimal = new Mammal(name, species, traits, 50, 50);
+            Animal newAnimal = new Reptile(name, species, traits, 50, 50);
             animals.add(newAnimal);
         }
         else
@@ -62,9 +69,9 @@ public class BuisnessLayer {
     public void feedAnimal()
     {
         Animal toFeed = this.selectAnimal();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the amount of food points you would like this animal to eat");
         int feedPoints = scanner.nextInt();
+        scanner.nextLine();
         toFeed.feed(feedPoints);
     }
 
@@ -85,15 +92,14 @@ public class BuisnessLayer {
     public void attackAnimal()
     {
         Animal toFeed = this.selectAnimal();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the amount of damage points you would like to inflict on this poor animal");
         int dmgPoints = scanner.nextInt();
+        scanner.nextLine();
         toFeed.damage(dmgPoints);
     }
 
     private Animal selectAnimal()
     {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Select an animal: ");
         int position = 0;
         for (Animal animal : animals){
@@ -101,6 +107,7 @@ public class BuisnessLayer {
             position++;
         }
         int choice = scanner.nextInt();
+        scanner.nextLine();
         scanner.close();
         return animals.get(choice);
         
