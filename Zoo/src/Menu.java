@@ -68,12 +68,35 @@ public class Menu {
 
             case MainMenuOptions.ADD_ANIMAL:
                 bi.addAnimal();
+                break;
 
             case MainMenuOptions.REMOVE_ANIMAL:
-                bi.
-                
+                bi.removeAnimal();
+                break;
 
-            
+            case MainMenuOptions.ADD_ANIMAL_VET:
+                bi.addAnimalToVet();
+                break;
+                
+            case MainMenuOptions.TREAT_ANIMAL:
+                bi.treatAnimal();
+                break;
+
+            case MainMenuOptions.ATTACK_ANIMAL:
+                bi.attackAnimal();
+                break;
+
+            case MainMenuOptions.VIEW_ANIMAL:
+                bi.viewAnimal();
+                break;
+
+            case MainMenuOptions.FEED_ANIMAL:
+                bi.feedAnimal();
+                break;
+
+            case MainMenuOptions.VIEW_VET_LIST:
+                bi.viewVetList();
+                break;
         }
     }
 }
