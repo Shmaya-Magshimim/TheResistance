@@ -18,10 +18,10 @@ abstract public class Animal {
   }
 
   public final void viewAnimal(){
-    System.out.printf("%s is a %s from the %s family \n", name, species, type);
-    System.out.printf("Their Traits are: %s\n", health);
+    System.out.printf("\n%s is a %s from the %s family \n", name, species, type);
+    System.out.printf("Their Traits are: %s\n", traits);
     System.out.printf("Hunger Level: %d\n", hunger);
-    System.out.printf("Health: %d\n", health);
+    System.out.printf("Health: %d\n\n", health);
   }
   public final String getDisplay(){
     return (name + " - " + species);

@@ -46,7 +46,6 @@ public class BuisnessLayer {
         {
             System.err.println("That wasnt an option. Silly you :(");
         }
-        scanner.close();
     }
 
     public void removeAnimal()
@@ -108,7 +107,6 @@ public class BuisnessLayer {
         }
         int choice = scanner.nextInt();
         scanner.nextLine();
-        scanner.close();
         return animals.get(choice);
         
     }

@@ -32,7 +32,7 @@ public class Menu {
             System.out.printf("%d - Feed Animal\n", MainMenuOptions.FEED_ANIMAL.ordinal());
             System.out.printf("%d - View Animal\n", MainMenuOptions.VIEW_ANIMAL.ordinal());
             System.out.printf("%d - View vets list\n", MainMenuOptions.VIEW_VET_LIST.ordinal());
-            System.out.printf("%d - Attack Animal\n", MainMenuOptions.ATTACK_ANIMAL.ordinal());
+            System.out.printf("%d - Attack Animal\n\n", MainMenuOptions.ATTACK_ANIMAL.ordinal());
 
             try 
             {
