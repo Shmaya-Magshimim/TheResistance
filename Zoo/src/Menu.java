@@ -9,7 +9,8 @@ enum MainMenuOptions {
     TREAT_ANIMAL,
     FEED_ANIMAL,
     VIEW_ANIMAL,
-    VIEW_VET_LIST
+    VIEW_VET_LIST,
+    ATTACK_ANIMAL
 }
 
 
@@ -19,6 +20,7 @@ public class Menu {
         Scanner scanner = new Scanner (System.in);
         MainMenuOptions option = MainMenuOptions.EXIT;
         int choice;
+        BuisnessLayer bi = new BuisnessLayer();
         
         do
         {
@@ -30,6 +32,7 @@ public class Menu {
             System.out.printf("%d - Feed Animal\n", MainMenuOptions.FEED_ANIMAL.ordinal());
             System.out.printf("%d - View Animal\n", MainMenuOptions.VIEW_ANIMAL.ordinal());
             System.out.printf("%d - View vets list\n", MainMenuOptions.VIEW_VET_LIST.ordinal());
+            System.out.printf("%d - Attack Animal\n", MainMenuOptions.ATTACK_ANIMAL.ordinal());
 
             try 
             {
@@ -44,7 +47,7 @@ public class Menu {
             if (choice >= 0 && choice < MainMenuOptions.values().length)
             {
                 option = MainMenuOptions.values()[choice];
-                handleInput(option);
+                handleInput(option, bi);
             }
             else
             {
@@ -56,7 +59,7 @@ public class Menu {
         scanner.close();
     }
 
-    private void handleInput(MainMenuOptions option)
+    private void handleInput(MainMenuOptions option, BuisnessLayer bi)
     {
         switch (option)
         {
@@ -64,7 +67,12 @@ public class Menu {
                 return;
 
             case MainMenuOptions.ADD_ANIMAL:
+                bi.addAnimal();
+
+            case MainMenuOptions.REMOVE_ANIMAL:
+                bi.
                 
+
             
         }
     }
