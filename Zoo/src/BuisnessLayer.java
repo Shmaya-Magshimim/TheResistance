@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class BuisnessLayer {
-    private ArrayList<Animal> animals;
+    private ArrayList<Animal> animals = new ArrayList<>();
     private Queue<Animal> vetList = new LinkedList<>();
 
     public void addAnimal()

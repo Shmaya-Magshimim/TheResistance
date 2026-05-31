@@ -73,7 +73,7 @@ public class Menu {
             case MainMenuOptions.REMOVE_ANIMAL:
                 bi.removeAnimal();
                 break;
-
+ 
             case MainMenuOptions.ADD_ANIMAL_VET:
                 bi.addAnimalToVet();
                 break;
