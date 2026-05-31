@@ -79,9 +79,18 @@ public class BuisnessLayer {
 
     private Animal selectAnimal()
     {
-        return new Animal();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select an animal: ");
+        int position = 0;
+        for (Animal animal : animals){
+            System.out.println(position + " - " + animal.getDisplay());
+            position++;
+        }
+        int choice = scanner.nextInt();
+        scanner.close();
+        return animals.get(choice);
+        
     }
-    
     
     
 }
