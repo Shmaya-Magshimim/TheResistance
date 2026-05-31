@@ -44,37 +44,51 @@ public class BuisnessLayer {
 
     public void removeAnimal()
     {
-
+        Animal toRemove = this.selectAnimal();
+        animals.remove(toRemove);
     }
 
     public void addAnimalToVet()
     {
-
+        Animal toAdd = this.selectAnimal();
+        vetList.add(toAdd);
     }
 
     public void treatAnimal()
     {
-
+        vetList.poll();
     }
 
     public void feedAnimal()
     {
-
+        Animal toFeed = this.selectAnimal();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the amount of food points you would like this animal to eat");
+        int feedPoints = scanner.nextInt();
+        toFeed.feed(feedPoints);
     }
 
     public void viewAnimal()
     {
-
+        Animal toView = this.selectAnimal();
+        toView.viewAnimal();
     }
 
     public void viewVetList()
     {
-
+        for (Animal animal : vetList)
+        {
+            System.out.println(animal.getDisplay());
+        }
     }
 
     public void attackAnimal()
     {
-
+        Animal toFeed = this.selectAnimal();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the amount of damage points you would like to inflict on this poor animal");
+        int dmgPoints = scanner.nextInt();
+        toFeed.damage(dmgPoints);
     }
 
     private Animal selectAnimal()
